@@ -6,19 +6,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-
 @Path("/hello")
-
 public class HelloController {
-	@GET
+	
+	 @GET
 	 @Produces(MediaType.APPLICATION_JSON)
 	 @Path("/customer/{customerId}")
 	 public Response getHelloWorld(@PathParam("customerId") String customerId)
 	{
-		
+		String Hello = "Jersey say :" + customerId;
+		System.out.println("Hello");
 		
 	  //return new HelloWorldObject();
 
-return Response.status(200).entity("Hello").build();
+		return Response.status(200).entity(Hello).build();
 	 }
 }

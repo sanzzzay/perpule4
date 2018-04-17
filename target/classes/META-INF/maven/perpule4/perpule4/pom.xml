@@ -5,16 +5,51 @@
 	<groupId>perpule4</groupId>
 	<artifactId>perpule4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>maven2-repository.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<properties>
+		<jersey2.version>2.5.1</jersey2.version>
+		<jaxrs.version>2.0.1</jaxrs.version>
+	</properties>
+	<dependencies>
+		<!-- JAX-RS -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>${jaxrs.version}</version>
+		</dependency>
+		<!-- Jersey 2.19 -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>src</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -27,13 +62,6 @@
 		</plugins>
 
 	</build>
-	<dependencies>
 
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.8</version>
-		</dependency>
-	</dependencies>
 
 </project>
